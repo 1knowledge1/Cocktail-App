@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Cocktail App</string>
+    <string name="fragment_cocktails_title">Popular cocktails</string>
+    <string name="cocktail_default_name">Cocktail name</string>
+    <string name="instruction">Instruction</string>
+    <string name="ingredients">Ingredients</string>
 </resources>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ru.knowledge.cocktailapp.cocktails.detailed.CocktailsDetailedFragment"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_fragment_detailed_cocktail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_begin="8dp"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/tv_fragment_detailed_cocktail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/cocktail_default_name"
+            android:textSize="@dimen/big_text"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/gl_fragment_detailed_cocktail"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_fragment_detailed_cocktail"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            app:layout_constraintStart_toStartOf="@id/gl_fragment_detailed_cocktail"
+            app:layout_constraintTop_toBottomOf="@id/tv_fragment_detailed_cocktail_title">
+
+            <ImageView
+                android:id="@+id/iv_fragment_detailed_cocktail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                tools:visibility="visible"
+                tools:background="@color/black" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_fragment_detailed_type"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/cocktail_default_name"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/medium_text"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            app:layout_constraintTop_toTopOf="@id/cv_fragment_detailed_cocktail"
+            app:layout_constraintStart_toEndOf="@id/cv_fragment_detailed_cocktail" />
+
+        <TextView
+            android:id="@+id/tv_fragment_detailed_type_alcoholic"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/cocktail_default_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/medium_text"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/tv_fragment_detailed_type"
+            app:layout_constraintStart_toStartOf="@id/tv_fragment_detailed_type" />
+
+        <TextView
+            android:id="@+id/tv_fragment_detailed_instruction_title"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/instruction"
+            android:textColor="@color/black"
+            android:textSize="@dimen/big_text"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/cv_fragment_detailed_cocktail"
+            app:layout_constraintStart_toStartOf="@id/cv_fragment_detailed_cocktail" />
+
+        <TextView
+            android:id="@+id/tv_fragment_detailed_instruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="8dp"
+            tools:text="Long long text super long long text long long text super long long text long long super text long text long long text super long long text long long super text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/medium_text"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/tv_fragment_detailed_instruction_title"
+            app:layout_constraintStart_toStartOf="@id/gl_fragment_detailed_cocktail"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_fragment_detailed_ingredient_title"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/ingredients"
+            android:textColor="@color/black"
+            android:textSize="@dimen/big_text"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/tv_fragment_detailed_instruction"
+            app:layout_constraintStart_toStartOf="@id/gl_fragment_detailed_cocktail" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_fragment_detailed"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_fragment_detailed_ingredient_title"
+            tools:listitem="@layout/item_ingredient" />
+
+        <ProgressBar
+            android:id="@+id/pb_fragment_cocktails"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:indeterminateTint="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tv_fragment_detailed_instruction_title"
+            app:layout_constraintBottom_toTopOf="@id/tv_fragment_detailed_ingredient_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
